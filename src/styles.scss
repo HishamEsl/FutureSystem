@@ -1,1 +1,48 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+
+@font-face {
+    font-family: 'main-font';
+    src: url(./assets/fonts/Poppins-Regular.ttf);
+}
+
+*{
+    font-family: 'main-font' !important;
+}
+
+.owl-prev-b{
+    position: absolute;
+    right: 50px;
+    top: -70px;
+    background-image: url('./assets/Icons/PNG/Desktop/arrow-left.png') !important;
+    background-color: rgb(255, 255, 255) !important;
+
+}
+.owl-next-b{
+    position: absolute;
+    right: 0px;
+    top: -70px;
+    background-image: url('./assets/Icons/PNG/Desktop/bigarrowright.png') !important;
+    background-color: rgb(255, 255, 255) !important;
+
+}
+
+
+
+
+.owl-nav {
+visibility: hidden;
+background-image: '',
+
+
+}
+
+.owl-carousel .nav-button {
+    height: 40px !important;
+    width: 40px  !important;
+
+
+  }

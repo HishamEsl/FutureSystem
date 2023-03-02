@@ -1,0 +1,32 @@
+
+@import "../../../../assets/scss/global";
+@import "../../../../assets/scss/varibles";
+
+
+.booking{
+    padding-top: $padding-top-start;
+    @media (max-width: 767px) {
+      padding-top: $padding-top-start-sm;
+    }
+
+    
+    img{
+        width: 100%;
+        height: 650px;
+        border-radius: 10px 0 0 10px;
+
+        @media (max-width: 767px) {
+            height: 364px;       
+        border-radius: 10px;
+        }
+    }
+
+    .section-content{
+        background-color: rgba($color: $main-color, $alpha: .08);
+        
+        @media (max-width: 767px) {
+           margin-top: 20px;
+        }
+    }
+
+}

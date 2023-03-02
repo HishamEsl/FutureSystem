@@ -1,0 +1,41 @@
+@import "../../assets/scss/global";
+@import "../../assets/scss/varibles";
+
+footer {
+  margin-top: $padding-top;
+
+  ul li {
+    margin-right: 32px;
+    @media (max-width: 767px) {
+      margin-right: 16px;
+    }
+  }
+
+  .icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    transition: 0.7s ease-in-out;
+    &:hover {
+      background-color: $main-color;
+     
+      a svg path {
+        fill: #fff;
+      }
+    }
+    a {
+      text-decoration: none;
+    }
+  }
+
+  p {
+    font-weight: $font-size-md;
+    font-size: $font-size-sm;
+    color: $gray-color;
+
+    @media (max-width: 767px) {
+      margin-top: 8px;
+      font-size: $font-size-xs;
+    }
+  }
+}

@@ -1,0 +1,149 @@
+@import "../../assets/scss/global";
+@import "../../assets/scss/varibles";
+
+//Start Our Services
+.our-services {
+  padding-top: $padding-top-start;
+  @media (max-width: 767px) {
+    padding-top: $padding-top-start-sm;
+  }
+
+  .image-content {
+    position: relative;
+    .bg-right {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 370px;
+      height: 380px;
+      background-image: url("../../assets/illustrations/Rectangle\ 1.png");
+      opacity: 0.7;
+    }
+    .bg-left {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 370px;
+      height: 380px;
+      background-image: url("../../assets/illustrations/Rectangle\ 1.png");
+      opacity: 0.7;
+    }
+  }
+}
+
+// Start Our portfolio
+.portfolio {
+  padding-top: $padding-top-start;
+  @media (max-width: 767px) {
+    padding-top: $padding-top-start-sm;
+  }
+
+  .carousel-content {
+    a {
+      text-decoration: none;
+    }
+    img {
+      height: 370px;
+      @media (max-width: 767px) {
+        height: 240px;
+      }
+    }
+  }
+}
+
+// Star How It Works
+.works {
+  padding-top: $padding-top-start;
+  @media (max-width: 767px) {
+    padding-top: $padding-top-start-sm;
+  }
+
+  .work-container {
+    padding-top: $padding-top;
+    .content {
+      width: 350px;
+      height: 80px;
+      border-radius: 80px;
+      background-color: rgba(9, 88, 150, 0.08);
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 8px 3px;
+      @media (max-width: 767px) {
+        width: 240px;
+        height: 50px;
+      }
+      &:hover {
+        background-color: #fff;
+        p {
+          color: $main-color;
+        }
+        .number-content {
+          background-color: $main-color;
+          color: #fff;
+          box-shadow: rgba(0, 0, 0, 0.25) 0px 22px 70px 4px;
+        }
+      }
+      p {
+        font-size: $font-size-md;
+        font-weight: $font-weight-lg;
+        @media (max-width: 767px) {
+          font-size: $font-size-xs;
+          font-weight: $font-weight-md;
+        }
+      }
+
+      .number-content {
+        width: 88px;
+        height: 88px;
+        border-radius: 50%;
+        background-color: #fff;
+        text-align: center;
+        @media (max-width: 767px) {
+          width: 44px;
+          height: 44px;
+        }
+      }
+    }
+    .content-1 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      position: relative;
+
+      .arrow {
+        position: absolute;
+        top: 20px;
+        right: -180px;
+        @media (max-width: 767px) {
+          right: -40px;
+        }
+      }
+    }
+    .content-2 {
+      position: absolute;
+      top: 20px;
+      left: 40%;
+      position: relative;
+      .arrow {
+        position: absolute;
+        top: 20px;
+        right: -180px;
+        @media (max-width: 767px) {
+          right: -40px;
+        }
+      }
+
+      @media (max-width: 767px) {
+        top: 5px;
+        left: 20%;
+      }
+    }
+    .content-3 {
+      position: absolute;
+      top: 20px;
+      left: 80%;
+      @media (max-width: 767px) {
+        top: 10px;
+        left: 40%;
+      }
+    }
+  }
+}
