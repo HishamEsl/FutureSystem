@@ -9,8 +9,10 @@ import { IService } from '../models/service.model';
   providedIn: 'root',
 })
 export class FutureSystemService {
-  private projectsUrl = 'Projects';
-  private servicesUrl = 'Services';
+  private projectsUrl = 'Company/Projects';
+  private servicesUrl = 'Company/Services';
+  private sendEmailUrl = 'Mails/ProjectSignup';
+  private sendPickAppointmentEmailUrl = 'Mails/PickAppointment';
   constructor(private _http: HttpClient) {}
 
   projects$ = this._http
@@ -29,5 +31,14 @@ export class FutureSystemService {
         return services as IService[];
       }),
       shareReplay(1)
+    );
+
+  PostEmail = (email: string) =>
+    this._http.get(UrlEndpoints.apiRoot + this.sendEmailUrl + `/${email}`);
+
+  PostPickAppointmentEmail = (model: any) =>
+    this._http.post(
+      UrlEndpoints.apiRoot + this.sendPickAppointmentEmailUrl,
+      model
     );
 }

@@ -10,15 +10,16 @@
           <div class="section-heading text-center">
             <h2 class="">Ready to get started?</h2>
           </div>
-          <form>
+          <form #emailForm="ngForm">
             <div class="position-relative input-container mb-3">
               <input
                 class="form-control w-100 h-100"
                 type="text"
                 placeholder="Write your Email"
                 aria-label=" example"
+                name="email" [(ngModel)]="email"
               />
-              <button class="btn btn-main mt-2 position-absolute top-0">
+              <button class="btn btn-main mt-2 position-absolute top-0"  (click)="onSendEmailSubmit(emailForm)">
                 Let’s talk
               </button>
             </div>

@@ -15,31 +15,49 @@
                     <h2>Let’s get to work</h2>
                   </div>
 
-                  <form>
+                  <form [formGroup]="bookingForm">
                     <div class="row">
 
                         <div class="col-12">
                             <div class="mb-3">
                            
-                                <input type="text" class="form-control w-100" id="formrow-email-input" placeholder="Your name">
+                                <input type="text" class="form-control w-100" id="formrow-email-input" placeholder="Your name" name="name"
+                                formControlName="name" [ngClass]="{
+                                  'is-invalid': f['name'].touched && f['name'].errors
+                                }" />
+                                <div *ngIf="f['name'].touched && f['name'].errors" class="text-danger">
+                                    <span *ngIf="f['name'].errors?.['required']">This value is required.!</span>
+                                  </div>
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="mb-3">
                            
-                                <input type="email" class="form-control w-100" id="formrow-email-input" placeholder="Your Email">
+                                <input type="email" class="form-control w-100" id="formrow-email-input" placeholder="Your Email" name="email"
+                                formControlName="email" [ngClass]="{
+                                  'is-invalid': f['email'].touched && f['email'].errors
+                                }" >
+                                <div *ngIf="f['email'].touched && f['email'].errors" class="text-danger">
+                                    <span *ngIf="f['email'].errors?.['required']">This value is required.!</span>
+                                    <span *ngIf="f['email'].errors?.['email']">This value should be a valid email.</span>
+                                  </div>
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="mb-3">
                            
-                                <input type="text" class="form-control w-100" id="formrow-email-input" placeholder="Your Phone">
+                                <input type="text" class="form-control w-100" id="formrow-email-input"    formControlName="phone" placeholder="Your Phone" name="phone" [ngClass]="{
+                                    'is-invalid': f['phone'].touched && f['phone'].errors
+                                  }">
+                                  <div *ngIf="f['phone'].touched && f['phone'].errors" class="text-danger">
+                                    <span *ngIf="f['phone'].errors?.['required']">This value is required.!</span>
+                                  </div>
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="mb-3">
                            
-                                <textarea  class="form-control " rows="4" id="formrow-email-input" placeholder="Your message"></textarea>
+                                <textarea  class="form-control " rows="4" id="formrow-email-input" formControlName="message" placeholder="Your message" name="message"></textarea>
                             </div>
                         </div>
 
@@ -47,7 +65,8 @@
 
                         <div class="d-grid gap-2">
             
-                            <button class="btn btn-main" type="button">Book an appointment</button>
+                            <button class="btn btn-main" type="button" [disabled]="bookingForm.invalid"
+                            (click)="onBookingSubmit()">Book an appointment</button>
                           </div>
 
                         </form>
