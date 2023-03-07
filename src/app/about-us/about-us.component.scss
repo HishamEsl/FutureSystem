@@ -25,56 +25,54 @@
   @media (max-width: 767px) {
     padding-top: $padding-top-sm;
   }
-  .clients-content{
+  .clients-content {
     margin-top: 32px;
     @media (max-width: 767px) {
-       margin-top: 16px;
-      }
-      .card{
-        img{
-            height: 80px;
-            @media (max-width: 767px) {
-              
-               } 
+      margin-top: 16px;
+    }
+    .card {
+      img {
+        height: 80px;
+        @media (max-width: 767px) {
         }
       }
+    }
   }
 }
 
-// start Our Story 
-.our-story{
-    margin-top: $padding-top;
-    padding: 32px 0;
-    @media (max-width: 767px) {
-      padding-top: $padding-top-sm;
-    }
+// start Our Story
+.our-story {
+  margin-top: $padding-top;
+  padding: 32px 0;
+  @media (max-width: 767px) {
+    padding-top: $padding-top-sm;
+  }
 
-    .section-content {
-        a {
-          font-size: $font-size-md;
-          font-weight: $font-weight-lg;
-          &:hover {
-            letter-spacing: 3px;
-          }
-          svg {
-            margin-left: 8px;
-            width: 24 px;
-          }
-        }
+  .section-content {
+    a {
+      font-size: $font-size-md;
+      font-weight: $font-weight-lg;
+      &:hover {
+        letter-spacing: 3px;
       }
+      svg {
+        margin-left: 8px;
+        width: 24 px;
+      }
+    }
+  }
 }
 
-
 // start why Future System
-.why-future-system{
-    margin-top: $padding-top;
+.why-future-system {
+  margin-top: $padding-top;
 
   background-image: url("../../assets/illustrations/Rectangle\ 1.png");
   position: relative;
   @media (max-width: 767px) {
     padding-top: $padding-top-sm;
   }
-  
+
   .overlly {
     position: absolute;
     left: 0;
@@ -91,88 +89,81 @@
     z-index: 22;
   }
 
-  .card{
-    span{
-        font-size: $font-size-sm;
-        font-weight: $font-weight-md;
+  .card {
+    min-height: 200px;
+    span {
+      font-size: $font-size-sm;
+      font-weight: $font-weight-md;
     }
-    svg{
-        width: 32px;
-        height: 32px;
-    }
-
-    h3{
-        margin-top: 28px;
-        color: $main-color;
-        font-weight: $font-weight-lg;
-    }
-    p{
-        margin-top: 16px;
-        color: $gray-color;
-        font-size: $font-size-md;
-        font-weight: $font-weight-md;
+    svg {
+      width: 32px;
+      height: 32px;
     }
 
-    &:hover{
-      color:#FFF;
-      background-color:$main-color;
+    h3 {
+      margin-top: 28px;
+      color: $main-color;
+      font-weight: $font-weight-lg;
+    }
+    p {
+      margin-top: 16px;
+      color: $gray-color;
+      font-size: $font-size-md;
+      font-weight: $font-weight-md;
+    }
 
-      span{
-        color: #FFF;
+    &:hover {
+      color: #fff;
+      background-color: $main-color;
 
+      span {
+        color: #fff;
       }
-      svg{
-        path{
-          fill: #FFF;
+      svg {
+        path {
+          fill: #fff;
         }
       }
-      h3{
-        color: #FFF;
-
+      h3 {
+        color: #fff;
       }
-      p{
-        color: #FFF;
+      p {
+        color: #fff;
       }
     }
   }
-
- 
 }
 
-// Start our Team 
-.our-team{
+// Start our Team
+.our-team {
   padding-top: $padding-top-start;
   @media (max-width: 767px) {
     padding-top: $padding-top-start-sm;
   }
 
-
-  .carousel-content{
+  .carousel-content {
     margin-top: 32px;
-    .card{
-      &:hover{
-        .card-body{
-      
+    .card {
+      &:hover {
+        .card-body {
           background-color: $main-color;
-          .card-title{
-            
-            color: #FFF;
+          .card-title {
+            color: #fff;
           }
-          p{
-            color: #FFF;
-         
+          p {
+            color: #fff;
           }
         }
       }
-      .card-title{
+      .card-title {
         font-size: $font-size-sm;
         font-weight: $font-weight-md;
         color: $gray-color;
       }
-      p{
+      p {
         color: $main-color;
         font-size: $font-size-md;
-        font-weight:  $font-weight-xl;
+        font-weight: $font-weight-xl;
       }
     }
   }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { FutureSystemService } from '../shared/services/future-system.service';
 
 @Component({
   selector: 'app-about-us',
@@ -36,7 +37,8 @@ export class AboutUsComponent implements OnInit {
     nav: true,
   };
 
-  constructor() {}
+  projects$ = this._futureSystemServices.projects$;
+  constructor(private _futureSystemServices: FutureSystemService) {}
 
   ngOnInit(): void {
     window.scroll({

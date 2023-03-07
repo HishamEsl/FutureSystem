@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { pipe } from 'rxjs';
 import { fadeInAnimation } from '../shared/animations/listAnimation';
 import { FutureSystemService } from '../shared/services/future-system.service';
 
@@ -41,7 +42,13 @@ export class OurServicesComponent implements OnInit {
 
   projects$ = this._futureSystemServices.projects$;
   services$ = this._futureSystemServices.services$;
-  constructor(private _futureSystemServices: FutureSystemService) {}
+
+  @ViewChild('TheIframe') TheIframeEl: any;
+
+  constructor(private _futureSystemServices: FutureSystemService) {
+
+    this.TheIframeEl
+  }
 
   ngOnInit(): void {
     window.scroll({
@@ -50,4 +57,6 @@ export class OurServicesComponent implements OnInit {
       behavior: 'smooth',
     });
   }
+
+  
 }

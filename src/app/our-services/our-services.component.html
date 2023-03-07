@@ -13,9 +13,7 @@
     <div class="row" *ngFor="let service of services; index as i" [class]="(i%2 === 0)?'':'flex-row-reverse'">
       <div class="col-md-6 col-12">
         <div class="section-content mt-3">
-          <!-- <div class="section-title">
-            <span>Our Services </span>
-          </div> -->
+
           <div class="section-heading mt-5">
             <h2 class="">{{service.name}}</h2>
           </div>
@@ -25,7 +23,7 @@
         </div>
       </div>
       <div class="col-md-6 col-12 image-content">
-        <div  [class]="(i%2 === 0)?'bg-right':'bg-left'"></div>
+        <div [class]="(i%2 === 0)?'bg-right':'bg-left'"></div>
         <div class="swap">
           <img src="../../assets/images/Home/G2swap-1.png" />
           <img src="../../assets/images/Home/G2swap.png" />
@@ -33,69 +31,6 @@
       </div>
     </div>
 
-    <!-- <div class="row">
-      <div class="col-md-6 col-12 image-content">
-        <div class="bg-left"></div>
-        <div class="swap">
-          <img src="../../assets/images/OurServices/G1swap-1.png" />
-          <img src="../../assets/images/OurServices/G1swap.png" />
-        </div>
-      </div>
-      <div class="col-md-6 col-12 d-flex align-items-center">
-        <div class="section-content mt-3">
-          >
-          <div class="section-heading">
-            <h2 class="">Mobile App Development</h2>
-          </div>
-          <p>
-            We design and develop Mobile applications with the latest
-            technologies for Mobile using.
-          </p>
-        </div>
-      </div>
-    </div> -->
-    <!-- 
-    <div class="row">
-      <div class="col-md-6 col-12 d-flex align-items-center">
-        <div class="section-content mt-3">
-          <div class="section-heading">
-            <h2 class="">UI/UX Design Services</h2>
-          </div>
-          <p>
-            We design and develop websites with the latest technologies for web
-            development using FIGMA .
-          </p>
-        </div>
-      </div>
-      <div class="col-md-6 col-12 image-content">
-        <div class="bg-right"></div>
-        <div class="swap">
-          <img src="../../assets/images/Home/G2swap-1.png" />
-          <img src="../../assets/images/Home/G2swap.png" />
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-6 col-12 image-content">
-        <div class="bg-left"></div>
-        <div class="swap">
-          <img src="../../assets/images/OurServices/G1swap-1.png" />
-          <img src="../../assets/images/OurServices/G1swap.png" />
-        </div>
-      </div>
-      <div class="col-md-6 col-12 d-flex align-items-center">
-        <div class="section-content mt-3">
-          <div class="section-heading">
-            <h2 class="">ERP Systems</h2>
-          </div>
-          <p>
-            We design and develop ERP Systems can help your business to be
-            managed successfully.
-          </p>
-        </div>
-      </div>
-    </div> -->
   </div>
 </section>
 
@@ -114,51 +49,16 @@
         </div>
       </div>
       <div class="col-12">
-        <div class="carousel-content">
+        <div class="carousel-content" *ngIf="projects$ |async as projects">
           <owl-carousel-o [options]="portfolioOptions">
-            <ng-template carouselSlide>
-              <div class="card p-md-5">
-                <!-- <a
-                  href="https://angvm01.uksouth.cloudapp.azure.com:6063"
-                  target="_blank"
-                >
-                  <img
-                    src="../../assets/images/visitegypt.png"
-                    class="card-img-top"
-                    alt="VisitEgypt"
-                  /> -->
-                <!-- </a> -->
-                <iframe
-                  src="https://angvm01.uksouth.cloudapp.azure.com:6063"
-                  height="360"
-                  width="100%"
-                  title="Iframe Example"
-                  
-                  
-                ></iframe>
-              </div>
-            </ng-template>
-            <ng-template carouselSlide>
-              <div class="card p-md-5">
-                <iframe
-                  src="https://angvm01.uksouth.cloudapp.azure.com:6065/"
-                  height="360"
-                  width="100%"
-                  title="Iframe Example"
-                ></iframe>
-              </div>
-            </ng-template>
+            <ng-template carouselSlide *ngFor="let project of projects , index as i">
+              <a class="card p-md-5" href="{{project.projectUrl}}" target="_blank">
 
-            <ng-template carouselSlide>
-              <div class="card p-md-5">
-                <iframe
-                  src="Https://angvm01.uksouth.cloudapp.azure.com:6061"
-                  height="360"
-                  width="100%"
-                  title="Iframe Example"
-                ></iframe>
-              </div>
+                <iframe #TheIframe [src]="project.projectUrl |sanitizeUrl" height="360" width="100%" title="Iframe Example"
+                  scrolling="no"></iframe>
+              </a>
             </ng-template>
+         
           </owl-carousel-o>
         </div>
       </div>
@@ -179,61 +79,37 @@
       </div>
       <div class="col-12">
         <div class="work-container position-relative">
-          <div
-            [@fadeInAnimation]="{ value: true, params: { delay: 500 } }"
-            class="content-1 content d-flex justify-content-center align-items-center position-relative"
-          >
+          <div [@fadeInAnimation]="{ value: true, params: { delay: 500 } }"
+            class="content-1 content d-flex justify-content-center align-items-center position-relative">
             <p class="ms-5 m-0">Select a service</p>
             <div class="number-content position-absolute top-0 start-0 h-100">
-              <h2
-                class="w-100 h-100 d-flex align-items-center justify-content-center border-2"
-              >
+              <h2 class="w-100 h-100 d-flex align-items-center justify-content-center border-2">
                 1
               </h2>
             </div>
             <div class="arrow">
-              <img
-                class="d-none d-sm-block"
-                src="../../assets/illustrations/arrow.png"
-              />
-              <img
-                class="d-block d-sm-none"
-                src="../../assets/illustrations/small-arrow.png"
-              />
+              <img class="d-none d-sm-block" src="../../assets/illustrations/arrow.png" />
+              <img class="d-block d-sm-none" src="../../assets/illustrations/small-arrow.png" />
             </div>
           </div>
-          <div
-            [@fadeInAnimation]="{ value: true, params: { delay: 1000 } }"
-            class="content-2 content d-flex justify-content-center align-items-center position-relative"
-          >
+          <div [@fadeInAnimation]="{ value: true, params: { delay: 1000 } }"
+            class="content-2 content d-flex justify-content-center align-items-center position-relative">
             <p class="ms-5 m-0">Book an apportment</p>
             <div class="number-content position-absolute top-0 start-0 h-100">
-              <h2
-                class="w-100 h-100 d-flex align-items-center justify-content-center border-2"
-              >
+              <h2 class="w-100 h-100 d-flex align-items-center justify-content-center border-2">
                 2
               </h2>
             </div>
             <div class="arrow">
-              <img
-                class="d-none d-sm-block"
-                src="../../assets/illustrations/arrow.png"
-              />
-              <img
-                class="d-block d-sm-none"
-                src="../../assets/illustrations/small-arrow.png"
-              />
+              <img class="d-none d-sm-block" src="../../assets/illustrations/arrow.png" />
+              <img class="d-block d-sm-none" src="../../assets/illustrations/small-arrow.png" />
             </div>
           </div>
-          <div
-            [@fadeInAnimation]="{ value: true, params: { delay: 1500 } }"
-            class="content-3 content d-flex justify-content-center align-items-center position-relative"
-          >
+          <div [@fadeInAnimation]="{ value: true, params: { delay: 1500 } }"
+            class="content-3 content d-flex justify-content-center align-items-center position-relative">
             <p class="ms-5 m-0">Track your growth</p>
             <div class="number-content position-absolute top-0 start-0 h-100">
-              <h2
-                class="w-100 h-100 d-flex align-items-center justify-content-center border-2"
-              >
+              <h2 class="w-100 h-100 d-flex align-items-center justify-content-center border-2">
                 3
               </h2>
             </div>

@@ -1,27 +1,23 @@
 @import "../../assets/scss/global";
 @import "../../assets/scss/varibles";
 
-// Start Header 
+// Start Header
 
-header{
+header {
+  nav {
+    ul li {
+      margin-right: 32px;
+      font-size: $font-size-md;
+      font-weight: $font-weight-md;
+      a.active {
+        color: $main-color;
+        font-weight: $font-weight-lg;
+      }
+      &:last-child {
+        margin-right: 0px;
 
-    nav{
-
-
-        ul li{
-            margin-right: 32px;
-            font-size: $font-size-md;
-            font-weight: $font-weight-md;
-            a.active{
-                color: $main-color;
-                font-weight: $font-weight-lg;
-            }
-            &:last-child{
-                margin-right: 0px;
-                
-                // font-weight: $font-weight-md;
-            }
-        }
+        // font-weight: $font-weight-md;
+      }
     }
+  }
 }
-

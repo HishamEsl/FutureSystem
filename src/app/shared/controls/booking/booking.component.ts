@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 import { FutureSystemService } from '../../services/future-system.service';
 
 @Component({
@@ -19,7 +20,7 @@ export class BookingComponent implements OnInit {
     this.bookingForm = this.formBuilder.group({
       name: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
-      phone: ['', [Validators.required]],
+      phone: ['', [Validators.required, Validators.pattern('^01[0-9]{9}$')]],
       message: [''],
     });
   }
@@ -32,9 +33,16 @@ export class BookingComponent implements OnInit {
       message: this.bookingForm.controls['message'].value,
     };
 
-    this._futureSystemService
-      .PostPickAppointmentEmail(bookingObJ)
-      .subscribe((e) => console.log(e));
+    this._futureSystemService.PostPickAppointmentEmail(bookingObJ);
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Your email has been Sent',
+      showConfirmButton: false,
+      timer: 1500,
+    });
+
+    this.bookingForm.reset();
   }
 
   get f() {
