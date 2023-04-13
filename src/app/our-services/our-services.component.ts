@@ -46,8 +46,7 @@ export class OurServicesComponent implements OnInit {
   @ViewChild('TheIframe') TheIframeEl: any;
 
   constructor(private _futureSystemServices: FutureSystemService) {
-
-    this.TheIframeEl
+    this.TheIframeEl;
   }
 
   ngOnInit(): void {
@@ -57,6 +56,4 @@ export class OurServicesComponent implements OnInit {
       behavior: 'smooth',
     });
   }
-
-  
 }

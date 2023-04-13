@@ -143,6 +143,13 @@
 
   .carousel-content {
     margin-top: 32px;
+    img{
+      height: 280px;
+      @media (max-width: 767px) {
+        height: 200px;
+
+      }
+    }
     .card {
       &:hover {
         .card-body {

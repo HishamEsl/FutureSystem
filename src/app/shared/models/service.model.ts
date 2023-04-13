@@ -4,4 +4,6 @@ export interface IService {
   brief: string;
   description: string;
   logoUrl: string;
+  imageUrl1: string;
+  imageUrl2: string;
 }

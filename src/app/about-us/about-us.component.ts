@@ -38,6 +38,9 @@ export class AboutUsComponent implements OnInit {
   };
 
   projects$ = this._futureSystemServices.projects$;
+  employees$ = this._futureSystemServices.employees$;
+  clients$ = this._futureSystemServices.clients$;
+
   constructor(private _futureSystemServices: FutureSystemService) {}
 
   ngOnInit(): void {

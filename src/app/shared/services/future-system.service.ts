@@ -4,6 +4,8 @@ import { map, shareReplay } from 'rxjs';
 import { UrlEndpoints } from '../constant/url-endpoints';
 import { IProject } from '../models/project.model';
 import { IService } from '../models/service.model';
+import { IEmployee } from '../models/employee.model';
+import { IClient } from '../models/client.model';
 
 @Injectable({
   providedIn: 'root',
@@ -11,6 +13,8 @@ import { IService } from '../models/service.model';
 export class FutureSystemService {
   private projectsUrl = 'Company/Projects';
   private servicesUrl = 'Company/Services';
+  private employeesUrl = 'Company/Employees';
+  private clientsUrl = 'Company/Clients';
   private sendEmailUrl = 'Mails/ProjectSignup';
   private sendPickAppointmentEmailUrl = 'Mails/PickAppointment';
   constructor(private _http: HttpClient) {}
@@ -29,6 +33,23 @@ export class FutureSystemService {
     .pipe(
       map((services: IService[]) => {
         return services as IService[];
+      }),
+      shareReplay(1)
+    );
+
+  employees$ = this._http
+    .get<IEmployee[]>(UrlEndpoints.apiRoot + this.employeesUrl)
+    .pipe(
+      map((employees: IEmployee[]) => {
+        return employees as IEmployee[];
+      }),
+      shareReplay(1)
+    );
+  clients$ = this._http
+    .get<IClient[]>(UrlEndpoints.apiRoot + this.clientsUrl)
+    .pipe(
+      map((clients: IClient[]) => {
+        return clients as IClient[];
       }),
       shareReplay(1)
     );
