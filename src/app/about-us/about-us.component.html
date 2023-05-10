@@ -227,41 +227,7 @@
 </section>
 
 <!-- start Our Team Section-->
-<section class="our-team">
-  <div class="container">
-    <div class="row">
-      <div class="section-content mt-3">
-        <div class="section-title">
-          <span>Our Team </span>
-        </div>
-        <div class="section-heading">
-          <h2 class="">People behind the quality</h2>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12">
-        <div class="carousel-content" *ngIf="employees$ |async as employees">
-          <owl-carousel-o [options]="teamOptions">
-            <ng-template carouselSlide *ngFor="let employee of employees">
-              <div class="card">
-                <img
-                  src="{{employee.imageUrl}}"
-                  class="card-img-top rounded-0"
-                  alt="..."
-                />
-                <div class="card-body">
-                  <h5 class="card-title text-truncate">{{employee.name}}</h5>
-                  <p class="card-text text-truncate">{{employee.role}}</p>
-                </div>
-              </div>
-            </ng-template>
-          </owl-carousel-o>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <!--Start subscription Section  -  From Shared -->
 
